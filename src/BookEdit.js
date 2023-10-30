@@ -73,7 +73,7 @@ export default function EditUser() {
           className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
-          name="h"
+          name="title"
           value={formData.title}
           onChange={handleInputChange}
         />
@@ -86,7 +86,7 @@ export default function EditUser() {
         
           className="form-control"
           id="exampleInputPassword1"
-          name="w"
+          name="author"
           value={formData.author}
           onChange={handleInputChange}
         />
@@ -99,7 +99,7 @@ export default function EditUser() {
         
           className="form-control"
           id="exampleInputPassword1"
-          name="p1"
+          name="summary"
           value={formData.summary}
           onChange={handleInputChange}
         />
