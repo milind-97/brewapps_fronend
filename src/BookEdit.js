@@ -13,7 +13,7 @@ export default function EditUser() {
       summary: '',
     });
   
-    useEffect(() => { const getUser = axios.get(`${baseUrl}/api/books?book_id=${id}`)
+    useEffect(() => { const getUser = axios.get(`https://brewapps-backend.onrender.com/api/books?book_id=${id}`)
     .then((data)=>{
       console.log(data.data.book)
       setBook(data.data.book);
