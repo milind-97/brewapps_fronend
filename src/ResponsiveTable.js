@@ -15,7 +15,7 @@ function ResponsiveTable() {
 
   useEffect(() => {
     if (shouldFetchData) {
-      fetch(`${baseUrl}/api/books`)
+      fetch(`https://brewapps-backend.onrender.com/api/books`)
         .then((response) => response.json())
         .then((data) => {
           setData(data.books);
@@ -46,7 +46,7 @@ const handleDelete = (item) => {
 
 const confirmDelete = () => {
   // Send a request to delete the book
-  fetch(`${baseUrl}/api/books/${bookToDelete._id}`, {
+  fetch(`https://brewapps-backend.onrender.com/api/books/${bookToDelete._id}`, {
     method: 'DELETE',
   })
     .then((response) => response.json())
