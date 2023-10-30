@@ -38,7 +38,9 @@ function ResponsiveTable() {
   const handleEdit = (bookID) => {
     navigate(`/books/${bookID}`);
   };
-
+ const redirectToAddBook = () =>{
+    navigate('/book');
+  }
 const handleDelete = (item) => {
   // Show the confirmation dialog before deleting
   setBookToDelete(item);
@@ -101,9 +103,32 @@ const confirmDelete = () => {
               ))}
             </tbody>
           </table>
-          <div className="pagination">
-            {/* Pagination buttons */}
+          <div
+            className="pagination"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "20px",
+            }}
+          >
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage(currentPage - 1)}
+            >
+              Previous
+            </button>
+            <span>{currentPage}</span>
+            <button
+              disabled={indexOfLastItem >= data.length}
+              onClick={() => setCurrentPage(currentPage + 1)}
+            >
+              Next
+            </button>
           </div>
+          <button onClick={() => redirectToAddBook()}>
+           Add Book
+        </button>
         </div>
       )}
 
