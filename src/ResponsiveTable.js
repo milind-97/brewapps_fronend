@@ -56,6 +56,7 @@ const confirmDelete = () => {
       // Handle success or show a success message
       console.log('Book deleted:', data);
       // Reset the book to be deleted and trigger data fetching
+       setData((prevData) => prevData.filter((book) => book._id !== bookToDelete._id));
       setBookToDelete(null);
       setShouldFetchData(true); // Trigger data fetching to refresh the list
       navigate('/', { state: { userEdited: true } });
